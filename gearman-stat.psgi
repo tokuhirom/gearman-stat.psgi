@@ -70,8 +70,6 @@ my $port = $ENV{GEARMAN_STAT_PORT} || 7003;
 my $client = Gearman::Client::Status->new(host => $host, port => $port);
 
 my $app = sub {
-    warn "HOGE";
-
     my $html = <<'...';
 <!doctype html>
 <html>
@@ -97,7 +95,6 @@ my $app = sub {
     <table border='0'>
         <tr><th>File Descriptor</th><th>IP Address</th><th>Client ID</th><th>Function</th></tr>
 ...
-    $client->get_version();
     for my $row ($client->get_workers()) {
         $html .= sprintf(qq{<tr><td>%d</td><td>%s</td><td>%s</td><td>%s</td></tr>\n}, @$row);
     }
