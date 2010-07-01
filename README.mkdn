@@ -1,0 +1,10 @@
+What's this
+===========
+
+This is a pure perl version of http://github.com/amir/mod_gearman_status.
+
+screenshot
+==========
+
+http://gyazo.com/6bf6346c0b2923e106071d239b4cfae5.png
+
